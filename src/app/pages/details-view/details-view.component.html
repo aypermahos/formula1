@@ -1,0 +1,116 @@
+<div *ngIf="driver" id="driverDisplayContainer">
+  <div class="backDiv">
+    <button
+      class="btn btn-default bckButton"
+      type="button"
+      (click)="goBack()"
+      buttonLoader
+    >
+      <span></span>
+      <fa-icon class="backArrow" [icon]="faArrowLeft"></fa-icon>Back
+    </button>
+  </div>
+  <div class="Table">
+    <div class="Title">
+      <p>Detailed information</p>
+    </div>
+    <div class="Heading">
+      <div class="Cell">
+        <p>Driver:</p>
+      </div>
+      <div class="Cell">
+        <p>{{ driver.givenName }} {{ driver.familyName }}</p>
+      </div>
+    </div>
+    <div class="Row">
+      <div class="Cell">
+        <p>Nationality:</p>
+      </div>
+      <div class="Cell">
+        <p>{{ driver.nationality }}</p>
+      </div>
+    </div>
+    <div class="Row">
+      <div class="Cell">
+        <p>Date of birth:</p>
+      </div>
+      <div class="Cell">
+        <p>{{ driver.dateOfBirth }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="races" class="divResults">
+  <table class="racesTable col-centered" id="races">
+    <caption>
+      Formula 1 Results
+    </caption>
+    <tr>
+      <th (click)="sort(1, seasonDirection)">
+        Season
+        <span *ngIf="seasonDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowDown"></fa-icon>
+        </span>
+        <span *ngIf="!seasonDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowUp"></fa-icon>
+        </span>
+      </th>
+      <th (click)="sort(2, roundDirection)">
+        Round
+        <span *ngIf="roundDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowDown"></fa-icon>
+        </span>
+        <span *ngIf="!roundDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowUp"></fa-icon>
+        </span>
+      </th>
+      <th (click)="sort(3, grandPrixDirection)">
+        Grand Prix
+        <span *ngIf="grandPrixDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowDown"></fa-icon>
+        </span>
+        <span *ngIf="!grandPrixDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowUp"></fa-icon>
+        </span>
+      </th>
+      <th (click)="sort(4, teamDirection)">
+        Team
+        <span *ngIf="teamDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowDown"></fa-icon>
+        </span>
+        <span *ngIf="!teamDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowUp"></fa-icon>
+        </span>
+      </th>
+      <th (click)="sort(5, gridDirection)">
+        Grid
+        <span *ngIf="gridDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowDown"></fa-icon>
+        </span>
+        <span *ngIf="!gridDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowUp"></fa-icon>
+        </span>
+      </th>
+      <th (click)="sort(6, lapsDirection)">
+        Laps
+        <span *ngIf="lapsDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowDown"></fa-icon>
+        </span>
+        <span *ngIf="!lapsDirection">
+          <fa-icon class="orderArrow" [icon]="faArrowUp"></fa-icon>
+        </span>
+      </th>
+    </tr>
+    <tr *ngFor="let race of races">
+      <td>{{ race.season }}</td>
+      <td>{{ race.round }}</td>
+      <td>
+        {{ race.raceName }}
+      </td>
+      <td>{{ race.Results[0].Constructor.name }}</td>
+
+      <td>{{ race.Results[0].grid }}</td>
+      <td>{{ race.Results[0].laps }}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,66 @@
+<div id="searchDiv">
+  <form [formGroup]="searchForm">
+    <div class="tb">
+      <div class="td">
+        <input
+          placeholder="search.."
+          type="text"
+          formControlName="searchField"
+        />
+      </div>
+      <div class="td" id="s-search">
+        <button
+          id="searchButton"
+          class="button"
+          type="submit"
+          (click)="searchSubmit()"
+          buttonLoader
+        >
+          <span></span>
+          <fa-icon id="searchIcon" [icon]="faSearch"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<form [formGroup]="searchSeasonForm">
+  <div class="styled-select slate">
+    <select
+      formControlName="seasonField"
+      class="form-control"
+      id="select-season"
+      (change)="searchForSeason()"
+    >
+      <option value="" selected> Select round. </option>
+      <option *ngFor="let season of seasons">
+        {{ season.season }}
+      </option>
+    </select>
+  </div>
+</form>
+<table *ngIf="standingsList" class="standingsTable col-centered" id="drivers">
+  <caption>
+    Drivers Championship Standings -
+    {{
+      standingsList.season
+    }}
+  </caption>
+  <tr>
+    <th>Pos.</th>
+    <th>Name</th>
+    <th>Team</th>
+    <th>Wins</th>
+  </tr>
+  <tr
+    *ngFor="let driverStanding of standingsList.DriverStandings"
+    (click)="selectDriver(driverStanding.Driver)"
+  >
+    <td>{{ driverStanding.position }}</td>
+    <td>
+      {{ driverStanding.Driver.givenName }}
+      {{ driverStanding.Driver.familyName }}
+    </td>
+    <td>{{ driverStanding.Constructors[0].name }}</td>
+    <td>{{ driverStanding.wins }}</td>
+  </tr>
+</table>

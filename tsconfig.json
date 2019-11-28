@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@formula1.env/*": ["src/environments/*"],
+      "@formula1.pages/*": ["src/app/pages/*"],
+      "@formula1.models/*": ["src/app/models/*"],
+      "@formula1.resolvers/*": ["src/app/resolvers/*"],
+      "@formula1.services/*": ["src/app/services/*"],
+      "@formula1/*": ["src/app/*"]
+    },
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"]
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

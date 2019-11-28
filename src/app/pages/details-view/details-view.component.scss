@@ -1,0 +1,146 @@
+#driverDisplayContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #4d4d4d;
+  color: white;
+  width: 300px;
+}
+.Table {
+  display: table;
+  margin-left: 20px;
+}
+.backDiv {
+  margin: 30px auto 30px 33%;
+}
+.bckButton {
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.Title {
+  display: table-caption;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+.Heading {
+  display: table-row;
+  font-weight: bold;
+  text-align: left;
+}
+.Row {
+  display: table-row;
+}
+.Cell {
+  display: table-cell;
+  border: none;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#races {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-top: 1%;
+}
+
+#races td,
+#races th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+#races tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#races tr:hover {
+  background-color: #ddd;
+}
+#races caption {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4d4d4d;
+  color: white;
+}
+
+.orderArrow {
+  margin-left: 5px;
+  font-size: 10px;
+}
+.backArrow {
+  margin: 0px 20px 10px 10px;
+}
+
+.divResults {
+  height: 95%;
+  overflow-y: auto;
+}
+
+.btn {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+}
+.btn:focus,
+.btn:active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+/* default
+  ---------------------------- */
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-default:focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-default:active {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
